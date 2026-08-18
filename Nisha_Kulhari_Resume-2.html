@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nisha Kulhari — Senior Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:            #F5F8FA;
+    --panel:         #ECF1F5;
+    --panel-line:    #D7E0E7;
+    --ink:           #0B1B2B;
+    --ink-soft:      #4A5C6E;
+    --ink-faint:     #8B9BA8;
+    --accent:        #0E8B8D;
+    --accent-soft:   #E4F3F2;
+    --metric:        #B5652E;
+    --metric-soft:   #FBEEE2;
+    --node:          #0B1B2B;
+    --line:          #C7D3DB;
+    --radius: 3px;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:
+      radial-gradient(circle at 1px 1px, var(--panel-line) 1px, transparent 1px) 0 0/28px 28px,
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .wrap{ max-width:840px; margin:0 auto; padding:0 28px; }
+
+  /* ---------------- HEADER ---------------- */
+  header.hero{
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--panel-line);
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px; height:7px;
+    background:var(--accent);
+    border-radius:50%;
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  h1.name{
+    font-family:var(--mono);
+    font-weight:800;
+    font-size:clamp(34px, 6vw, 52px);
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .role-line{
+    font-family:var(--mono);
+    font-weight:600;
+    font-size:clamp(15px, 2.4vw, 18px);
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+  .role-line .sep{ color:var(--ink-faint); margin:0 6px; }
+
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:24px;
+  }
+  .pill{
+    font-family:var(--mono);
+    font-size:12.5px;
+    padding:6px 12px;
+    border:1px solid var(--panel-line);
+    border-radius:100px;
+    color:var(--ink-soft);
+    background:#fff;
+  }
+  .status-badge{
+    margin-top:18px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--mono);
+    font-size:12.5px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:var(--radius);
+    background:var(--accent-soft);
+    color:#0A5F60;
+    border:1px solid #BFE4E2;
+  }
+  .status-badge::before{
+    content:"●";
+    color:var(--accent);
+    font-size:9px;
+  }
+
+  /* ---------------- SECTION SCAFFOLD ---------------- */
+  section{ padding:48px 0; border-bottom:1px solid var(--panel-line); }
+  section:last-of-type{ border-bottom:none; }
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .section-head .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:0.08em;
+  }
+  h2.section-title{
+    font-family:var(--mono);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .section-head .rule{
+    flex:1;
+    height:1px;
+    background:var(--panel-line);
+  }
+
+  /* ---------------- CORE STACK ---------------- */
+  .stack-grid{ display:grid; gap:16px; }
+  .stack-row{ display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:start; }
+  .stack-label{
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:600;
+    color:var(--ink-soft);
+    padding-top:6px;
+  }
+  .chip-set{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-family:var(--mono);
+    font-size:12px;
+    padding:5px 10px;
+    background:var(--panel);
+    border:1px solid var(--panel-line);
+    border-radius:var(--radius);
+    color:var(--ink);
+  }
+
+  /* ---------------- SUMMARY ---------------- */
+  .summary p{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:66ch;
+  }
+  .summary strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------------- EXPERIENCE / PIPELINE TIMELINE ---------------- */
+  .pipeline{ position:relative; }
+  .pipeline::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:8px;
+    bottom:8px;
+    width:2px;
+    background:repeating-linear-gradient(to bottom, var(--line) 0 6px, transparent 6px 11px);
+  }
+  .role{
+    position:relative;
+    padding-left:34px;
+    margin-bottom:38px;
+    opacity:0;
+    transform:translateY(10px);
+    animation:rise .6s ease forwards;
+  }
+  .role:last-child{ margin-bottom:0; }
+  .role::before{
+    content:"";
+    position:absolute;
+    left:0; top:5px;
+    width:16px; height:16px;
+    border-radius:4px;
+    background:var(--bg);
+    border:2.5px solid var(--node);
+  }
+  .role.current::before{
+    background:var(--accent);
+    border-color:var(--accent);
+    box-shadow:0 0 0 4px var(--accent-soft);
+  }
+  .role-header{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:6px 16px;
+  }
+  .role-title{ font-size:16.5px; font-weight:700; color:var(--ink); }
+  .role-when{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-faint);
+    white-space:nowrap;
+  }
+  .role-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-top:2px;
+  }
+  ul.role-bullets{
+    list-style:none;
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  ul.role-bullets li{
+    position:relative;
+    padding-left:16px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  ul.role-bullets li::before{
+    content:"→";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-size:13px;
+  }
+  .metric{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:12.5px;
+    color:var(--metric);
+    background:var(--metric-soft);
+    padding:1px 6px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+
+  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+
+  /* ---------------- EDUCATION ---------------- */
+  .edu-item{ display:grid; grid-template-columns:1fr auto; gap:8px 20px; padding:14px 0; border-bottom:1px dashed var(--panel-line); }
+  .edu-item:last-child{ border-bottom:none; }
+  .edu-degree{ font-weight:700; font-size:15px; color:var(--ink); }
+  .edu-school{ font-size:13.5px; color:var(--ink-soft); margin-top:2px; }
+  .edu-focus{ font-size:13px; color:var(--ink-faint); margin-top:4px; }
+  .edu-when{ font-family:var(--mono); font-size:12px; color:var(--ink-faint); white-space:nowrap; }
+
+  /* ---------------- PROJECTS ---------------- */
+  .project-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:640px){ .project-grid{ grid-template-columns:1fr; } }
+  .project-card{
+    border:1px solid var(--panel-line);
+    background:#fff;
+    border-radius:var(--radius);
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .project-card:hover{ border-color:var(--accent); transform:translateY(-2px); }
+  .project-title{ font-size:14.5px; font-weight:700; color:var(--ink); }
+  .project-link{ font-family:var(--mono); font-size:11.5px; color:var(--accent); word-break:break-all; }
+  .project-desc{ font-size:13px; color:var(--ink-soft); }
+
+  /* ---------------- FOOTER ---------------- */
+  footer{ padding:40px 0 64px; }
+  .lang-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
+  .footer-note{ font-size:13px; color:var(--ink-faint); }
+  .footer-note a{ color:var(--ink-soft); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+
+  @media print{
+    body{ background:#fff; }
+    .role{ opacity:1 !important; transform:none !important; }
+    section{ padding:20px 0; }
+  }
+
+  @media (max-width:600px){
+    .stack-row{ grid-template-columns:1fr; }
+    .stack-label{ padding-top:0; }
+    header.hero{ padding:44px 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Senior Data Engineer · Frankfurt, Germany</div>
+    <h1 class="name">Nisha Kulhari</h1>
+    <div class="role-line">Azure <span class="sep">·</span> Databricks <span class="sep">·</span> Spark <span class="sep">·</span> Kafka</div>
+    <div class="contact-row">
+      <span class="pill">+49&nbsp;1746&nbsp;299654</span>
+      <span class="pill">nishakulhari3@gmail.com</span>
+      <a class="pill" href="https://linkedin.com/in/nishakulhari" target="_blank" rel="noopener">linkedin.com/in/nishakulhari</a>
+    </div>
+    <div class="status-badge">Open to Data Analytics / Data Engineer roles in Germany — available immediately</div>
+  </header>
+
+  <section id="stack">
+    <div class="section-head">
+      <h2 class="section-title">Core Stack</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-row">
+        <div class="stack-label">Cloud</div>
+        <div class="chip-set">
+          <span class="chip">Azure Data Factory</span><span class="chip">Azure Databricks</span>
+          <span class="chip">ADLS Gen1/2</span><span class="chip">Azure Synapse</span>
+          <span class="chip">AWS Glue</span><span class="chip">AWS EMR</span>
+          <span class="chip">EC2</span><span class="chip">Lambda</span>
+          <span class="chip">Athena</span><span class="chip">Redshift</span><span class="chip">S3</span>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-label">Streaming</div>
+        <div class="chip-set">
+          <span class="chip">Apache Kafka</span><span class="chip">Amazon SNS/SQS</span>
+          <span class="chip">Event-Driven Architecture</span>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-label">Languages</div>
+        <div class="chip-set">
+          <span class="chip">Python</span><span class="chip">NumPy</span><span class="chip">Pandas</span>
+          <span class="chip">scikit-learn</span><span class="chip">spaCy</span>
+          <span class="chip">SQL</span><span class="chip">Spark</span><span class="chip">R</span><span class="chip">PowerShell</span>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-label">BI &amp; Analytics</div>
+        <div class="chip-set">
+          <span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Alteryx</span>
+          <span class="chip">Looker Studio</span><span class="chip">D3</span>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-label">Databases</div>
+        <div class="chip-set">
+          <span class="chip">MySQL</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL</span>
+          <span class="chip">BigQuery</span><span class="chip">Azure Synapse</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="summary" class="summary">
+    <div class="section-head">
+      <h2 class="section-title">Summary</h2>
+      <span class="rule"></span>
+    </div>
+    <p>
+      Senior Data Engineer with <strong>6+ years</strong> architecting scalable ETL frameworks, real-time streaming
+      pipelines, and enterprise BI platforms on AWS and Azure for clients including <strong>MGM Resorts</strong> and
+      <strong>Cox Communications</strong>. Currently completing an M.Sc. in Data Analytics &amp; Decision Science
+      (ML, Optimisation, Data Engineering) at RWTH Aachen University, with a Master's thesis in supply chain
+      analytics at <strong>Sanofi</strong>. Available for Senior Data Engineering roles in Germany.
+    </p>
+  </section>
+
+  <section id="experience">
+    <div class="section-head">
+      <h2 class="section-title">Experience</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="pipeline">
+
+      <div class="role current" style="animation-delay:.02s">
+        <div class="role-header">
+          <div class="role-title">Master's Thesis Researcher — Supply Chain Analytics</div>
+          <div class="role-when">May 2026 – Oct 2026</div>
+        </div>
+        <div class="role-meta">Sanofi · Frankfurt, Germany</div>
+        <ul class="role-bullets">
+          <li>Rebuilt Sanofi's stock-out alert system's flawed ground-truth label after auditing <span class="metric">24K+ records</span>, then trained a Random Forest classifier (<span class="metric">0.90+ ROC-AUC</span>) outperforming the existing rule-based system.</li>
+          <li>Diagnosed root causes of false alerts by joining lead-time and policy data, identifying <span class="metric">4</span> key drivers and building a scoring rule to flag false alerts pre-escalation.</li>
+          <li>Built a shipping-mode optimization tool surfacing <span class="metric">38</span> actionable fixes, including a <span class="metric">102-day</span> lead-time reduction for a Critical-risk SKU.</li>
+        </ul>
+      </div>
+
+      <div class="role" style="animation-delay:.08s">
+        <div class="role-header">
+          <div class="role-title">People Analytics Intern</div>
+          <div class="role-when">Aug 2025 – Nov 2025</div>
+        </div>
+        <div class="role-meta">HELLA GmbH &amp; Co. KGaA · Lippstadt, Germany</div>
+        <ul class="role-bullets">
+          <li>Owned end-to-end delivery of SAP HR Analytics dashboards deployed globally, enabling data-driven workforce decisions at enterprise scale.</li>
+          <li>Established a data governance framework from scratch, spanning metric definitions, data dictionary, access control policies, and data quality rules.</li>
+          <li>Standardised <span class="metric">5</span> core HR KPIs (Headcount, Attrition, Mobility, Management Ratio, Performance), creating a single source of truth for global HR reporting.</li>
+          <li>Automated reporting workflows using KNIME and Power BI, cutting manual reporting effort and accelerating insight delivery for senior stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="role" style="animation-delay:.14s">
+        <div class="role-header">
+          <div class="role-title">Tech Lead / Project Manager</div>
+          <div class="role-when">Mar – May 2023</div>
+        </div>
+        <div class="role-meta">Capgemini · Cox Communications · Dallas, TX, USA</div>
+        <ul class="role-bullets">
+          <li>Architected highly available Elasticsearch clusters supporting enterprise-scale search and observability workloads.</li>
+          <li>Drove design of an event-driven messaging architecture on Amazon SNS, introducing message partitioning that improved throughput by <span class="metric">25%</span>.</li>
+          <li>Led deployment of New Relic agents with SLO dashboards and alerts, reducing MTTR by detecting bottlenecks before client impact.</li>
+        </ul>
+      </div>
+
+      <div class="role" style="animation-delay:.20s">
+        <div class="role-header">
+          <div class="role-title">Azure Data Engineer (Application Consultant II)</div>
+          <div class="role-when">Jan – Dec 2022</div>
+        </div>
+        <div class="role-meta">Capgemini · MGM Resorts · Dallas, TX, USA</div>
+        <ul class="role-bullets">
+          <li>Architected a reusable ETL pipeline framework in Azure Data Factory, ingesting <span class="metric">452 objects / 16 properties</span> into Azure Data Lake (Parquet), cutting pipeline build time by <span class="metric">~40%</span>.</li>
+          <li>Engineered schema drift handling for incremental loads, enabling resilient ingestion across evolving source schemas with zero pipeline downtime.</li>
+          <li>Owned pipeline scheduling via Atomic Scheduler, ensuring reliable, low-ops daily delta load execution across the data platform.</li>
+        </ul>
+      </div>
+
+      <div class="role" style="animation-delay:.26s">
+        <div class="role-header">
+          <div class="role-title">Big Data Engineer</div>
+          <div class="role-when">Feb – Dec 2021</div>
+        </div>
+        <div class="role-meta">Mindtree Ltd · Bellevue, WA, USA</div>
+        <ul class="role-bullets">
+          <li>Drove integration of Self-Hosted Integration Runtime (SHIR) into ADF, reducing data transfer failure rate by <span class="metric">80%</span>.</li>
+          <li>Architected ETL pipelines in Azure Databricks, landing data into Azure Blob Storage, ADLS Gen1/Gen2, and Azure BW across governed storage zones.</li>
+          <li>Engineered an incremental ADF pipeline with watermark-based change tracking; automated PostgreSQL target-side scripts via PowerShell.</li>
+          <li>Led root cause analysis on data failures using SQL, Kusto (ADX), and Jarvis, improving overall pipeline reliability.</li>
+        </ul>
+      </div>
+
+      <div class="role" style="animation-delay:.32s">
+        <div class="role-header">
+          <div class="role-title">Technology Services Intern</div>
+          <div class="role-when">Aug 2020 – Feb 2021</div>
+        </div>
+        <div class="role-meta">The Shams Group · Dallas, TX, USA</div>
+        <ul class="role-bullets">
+          <li>Built interactive clinical dashboards with drilldowns (Power BI, Azure, SQL), helping hospitals track Meaningful Use targets.</li>
+          <li>Automated T-SQL jobs, saving <span class="metric">10+ hrs/mo</span> of manual effort; authored stored procedures for daily workflow monitoring.</li>
+        </ul>
+      </div>
+
+      <div class="role" style="animation-delay:.38s">
+        <div class="role-header">
+          <div class="role-title">Data Engineer / Analyst</div>
+          <div class="role-when">Aug 2014 – May 2018</div>
+        </div>
+        <div class="role-meta">WebCraft IT · India</div>
+        <ul class="role-bullets">
+          <li>Architected ETL jobs integrating structured/unstructured data at <span class="metric">5M+</span> record scale using AWS Glue, Athena, and Redshift.</li>
+          <li>Drove customer targeting strategy by age/gender/location, improving sales performance by <span class="metric">10%</span>.</li>
+          <li>Built KPI dashboards (Alteryx, Tableau) contributing to a <span class="metric">5%</span> revenue uplift; developed a CLI enabling non-experts to run pipelines independently.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head">
+      <h2 class="section-title">Education</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">M.Sc. Data Analytics &amp; Decision Science</div>
+        <div class="edu-school">RWTH Aachen University, Aachen, Germany</div>
+        <div class="edu-focus">Focus: ML, Optimisation, Data Engineering, Decision Modelling</div>
+      </div>
+      <div class="edu-when">Oct 2024 – Present</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">M.S. Information Technology Management</div>
+        <div class="edu-school">The University of Texas at Dallas, USA</div>
+      </div>
+      <div class="edu-when">Oct 2018 – Jan 2020</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">B.Tech. Electronics &amp; Communication Engineering</div>
+        <div class="edu-school">Government Women Engineering College, Ajmer, India</div>
+      </div>
+      <div class="edu-when">2010 – 2014</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head">
+      <h2 class="section-title">Selected Projects</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-title">RAG Document Q&amp;A Pipeline</div>
+        <a class="project-link" href="https://github.com/nisha9876-png/rag" target="_blank" rel="noopener">github.com/nisha9876-png/rag</a>
+        <div class="project-desc">End-to-end Retrieval-Augmented Generation pipeline (Python, LangChain, ChromaDB) with semantic chunking, dense retrieval, and model-agnostic embeddings.</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">E-Commerce dbt Analytics Pipeline</div>
+        <a class="project-link" href="https://github.com/nisha9876-png/ecommerce-dbt-pipeline" target="_blank" rel="noopener">github.com/nisha9876-png/ecommerce-dbt-pipeline</a>
+        <div class="project-desc">Analytics engineering pipeline with staging/intermediate/mart models, schema tests, and dimensional modelling for self-serve analytics.</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Hidden Relationships in Legacy Datasets</div>
+        <div class="project-link">Vodafone Capstone</div>
+        <div class="project-desc">Hybrid analytics pipeline combining metadata analysis, heuristic clustering, and vector embeddings — cut compute time <span class="metric">70%</span>, discovery effort <span class="metric">60%</span>.</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Real-Time Stock Market Data Engineering</div>
+        <div class="project-link">Kafka + AWS</div>
+        <div class="project-desc">Production-grade streaming pipeline on Apache Kafka with AWS S3 + Glue storage and ad-hoc analytics via Athena.</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Uber Trip Analytics</div>
+        <div class="project-link">GCP End-to-End Pipeline</div>
+        <div class="project-desc">Full-stack pipeline: raw ingestion → Mage orchestration → BigQuery warehousing → Looker Studio dashboarding across millions of trip records.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="section-head">
+      <h2 class="section-title">Languages</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="lang-row">
+      <span class="chip">English — Fluent</span>
+      <span class="chip">Hindi — Native</span>
+      <span class="chip">German — A2, actively improving</span>
+    </div>
+    <p class="footer-note">
+      Frankfurt, Germany · <a href="mailto:nishakulhari3@gmail.com">nishakulhari3@gmail.com</a> ·
+      <a href="https://linkedin.com/in/nishakulhari" target="_blank" rel="noopener">linkedin.com/in/nishakulhari</a>
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
